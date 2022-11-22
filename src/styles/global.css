@@ -13,7 +13,11 @@ html {
   background-color: #175f8f;
   color: #fff;
   border: 0;
-  padding: 4px;
+  padding: 6px;
   min-width: 75px;
   cursor: pointer;
+}
+.button[disabled] {
+  background-color: #a9abad;
+  cursor: not-allowed;
 }
