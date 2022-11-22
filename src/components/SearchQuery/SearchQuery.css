@@ -7,6 +7,7 @@
 }
 .term-form {
   margin-top: 1em;
+  padding: 0 2em;
 }
 .term-form label {
   display: block;
@@ -17,7 +18,9 @@
 }
 .term-form .controls {
   display: grid;
-  grid-template-columns: 85% 10%;
-  grid-column-gap: 5%;
-
+  grid-template-columns: 87% 10%;
+  grid-column-gap: 3%;
+}
+.inner-container {
+  display: flex;
 }

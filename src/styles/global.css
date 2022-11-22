@@ -8,7 +8,6 @@ html {
 .section-title {
   color: #333;
 }
-
 .button {
   background-color: #175f8f;
   color: #fff;
@@ -20,4 +19,7 @@ html {
 .button[disabled] {
   background-color: #a9abad;
   cursor: not-allowed;
+}
+.separator {
+  margin: 2em 0;
 }
