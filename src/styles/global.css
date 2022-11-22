@@ -1,0 +1,19 @@
+html {
+  font-family: sans-serif;
+}
+#app {
+  max-width: 800px;
+  margin: auto;
+}
+.section-title {
+  color: #333;
+}
+
+.button {
+  background-color: #175f8f;
+  color: #fff;
+  border: 0;
+  padding: 4px;
+  min-width: 75px;
+  cursor: pointer;
+}
