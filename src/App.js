@@ -6,7 +6,7 @@ const App = () => {
   const [results, setResults] = useState([]);
   return (
     <>
-      <h1 class="section-title">Advanced search query builder</h1>
+      <h1 className="section-title">Advanced search query builder</h1>
       <SearchQuery></SearchQuery>
       <SearchResults results={results}></SearchResults>
     </>
