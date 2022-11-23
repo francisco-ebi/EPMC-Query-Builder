@@ -1,0 +1,30 @@
+.results-wrapper {
+  margin-top: 1em;
+}
+.blue-bar-separator {
+  background-color: #cee4ee;
+  min-height: 6px;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.result .title {
+  color: #175f8f;
+  font-weight: bold;
+  text-shadow: rgb(0 0 0 / 35%) 1px 3px 5px;
+}
+.result .author {
+  color: #598336;
+  font-weight: bold;
+  text-shadow: rgb(0 0 0 / 25%) 1px 3px 5px;
+}
+.result .publisher-info, .result .journal-info {
+  text-shadow: rgb(0 0 0 / 25%) 1px 3px 5px;
+}
+.result .extra-info {
+  color: #175f8f;
+  text-shadow: rgb(0 0 0 / 25%) 1px 3px 5px;
+}
+.result hr {
+  margin: 1em 0;
+}
