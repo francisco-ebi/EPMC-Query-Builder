@@ -27,6 +27,9 @@ html {
   background-color: #a9abad;
   cursor: not-allowed;
 }
+.container {
+  padding: 0 2em;
+}
 .separator {
   margin: 2em 0 1em;
 }
