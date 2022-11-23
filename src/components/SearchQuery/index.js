@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./SearchQuery.css";
 
-const SearchQuery = (onSearchResults) => {
+const SearchQuery = ({ onSearchResults }) => {
   const [term, setTerm] = useState("");
   const [operator, setOperator] = useState("OR");
   const [query, setQuery] = useState([]);
@@ -61,14 +61,15 @@ const SearchQuery = (onSearchResults) => {
         <hr className="separator"/>
         <h2>Search query</h2>
         <div className="controls">
-          <textarea value={query.join(' ')} />
+          <textarea readOnly value={query.join(' ')} />
           <button
             className="button"
-            onClick={() => onSearchResults(query)}
+            onClick={() => onSearchResults(query.join(' '))}
           >
             View search results
             </button>
         </div>
+        <hr className="separator" />
       </div>
     </>
   )
