@@ -18,14 +18,15 @@ html {
   background-color: #175f8f;
   color: #fff;
   border: 0;
-  padding: 6px;
+  padding: 8px 12px;
   min-width: 75px;
   cursor: pointer;
+  font-size: 85%;
 }
 .button[disabled] {
   background-color: #a9abad;
   cursor: not-allowed;
 }
 .separator {
-  margin: 2em 0;
+  margin: 2em 0 1em;
 }

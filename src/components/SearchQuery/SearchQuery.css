@@ -5,9 +5,11 @@
 .blue-bar h2 {
   margin: 0;
 }
+.container {
+  padding: 0 2em;
+}
 .term-form {
   margin-top: 1em;
-  padding: 0 2em;
 }
 .term-form label {
   display: block;
@@ -16,11 +18,30 @@
 .term-form input {
   width: 100%;
 }
-.term-form .controls {
-  display: grid;
-  grid-template-columns: 87% 10%;
-  grid-column-gap: 3%;
+.controls {
+  display: flex;
+  gap: 5%;
+}
+.controls input, .controls textarea {
+  flex-grow: 1;
+  border-radius: 0;
+}
+.controls input {
+  border: 1px solid;
+  padding-left: 16px;
+}
+.controls textarea {
+  resize: none;
+}
+.controls .button {
+  align-self: flex-start;
+}
+.controls select {
+  padding-left: 16px;
+  font-weight: bold;
+  border-radius: 0;
 }
 .inner-container {
   display: flex;
+  flex-grow: 1;
 }

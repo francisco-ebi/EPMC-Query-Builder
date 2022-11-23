@@ -4,11 +4,20 @@ import SearchResults from "./components/SearchResults";
 
 const App = () => {
   const [results, setResults] = useState([]);
+  const onSearchResults = (query) => {
+    console.log(query);
+  }
   return (
     <>
-      <h1 className="section-title">Advanced search query builder</h1>
+      <h1 className="section-title">
+        Advanced search query builder
+      </h1>
       <SearchQuery></SearchQuery>
-      <SearchResults results={results}></SearchResults>
+      <SearchResults
+        results={results}
+        onSearchResults={onSearchResults}
+      >
+      </SearchResults>
     </>
   );
 }
