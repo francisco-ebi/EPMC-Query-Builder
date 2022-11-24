@@ -1,3 +1,7 @@
+import TitleInfo from './TitleInfo';
+import AuthorInfo from './AuthorInfo';
+import JournalInfo from './JournalInfo';
+import ExtraInfo from './ExtraInfo';
 import "./SearchResults.css";
 
 const SearchResults = ({ results, hitCount }) => {
@@ -11,27 +15,12 @@ const SearchResults = ({ results, hitCount }) => {
           <div className="results-wrapper">
             <span>1-25 of <b>{hitCount.toLocaleString()}</b> results</span>
             <div className="blue-bar-separator"></div>
-            {results.map(result => (
-              <div className="result" key={result.id}>
-                <p className="title">{result.title}</p>
-                <p className="author">{result.authorString}</p>
-                {result.journalInfo ? (
-                  <p className="journal-info">
-                    {result.journalInfo.journal.isoabbreviation},
-                    {result.journalInfo.volume}({result.journalInfo.issue}):
-                    {result.pageInfo}, {result.firstPublicationDate}
-                  </p>
-                ) : (
-                  <p className="publisher-info">
-                    {result.bookOrReportDetails.publisher},
-                    {result.bookOrReportDetails.yearOfPublication}
-                </p>
-                )}
-                <p className="extra-info">
-                  Cited by: {result.citedByCount} articles |
-                  PMID: {result.id} |
-                  PMCID: {result.pmcid}
-                </p>
+            {results.map(publication => (
+              <div className="result" key={publication.id}>
+                <TitleInfo title={publication.title}/>
+                <AuthorInfo author={publication.authorString}/>
+                <JournalInfo publication={publication} />
+                <ExtraInfo publication={publication} />
                 <hr />
               </div>
             ))}
