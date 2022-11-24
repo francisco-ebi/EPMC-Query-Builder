@@ -9,7 +9,7 @@ export default function ExtraInfo({
     <p className="extra-info">
       Cited by: {citedByCount} articles |
       PMID: {id} |
-      PMCID: {pmcid}
+      PMCID: {pmcid ? pmcid : 'N/A'}
     </p>
   );
 }
