@@ -27,13 +27,16 @@ export default function Paginator({
         <button
           type="button"
           className="prev"
+          aria-label="navigate to previous page"
           onClick={onPrevPage}
           >
             Prev
         </button>
         { pages.map(page => (
           <button
+            key={page}
             type="button"
+            aria-label={`navigate to page number ${page}`}
             className={page === currentPage + 1 ? 'selected': ''}
             onClick={() => setCurrentPage(page - 1)}
             >
@@ -43,6 +46,7 @@ export default function Paginator({
         <button
           type="button"
           className="next"
+          aria-label="navigate to next page"
           onClick={onNextPage}
         >
           Next

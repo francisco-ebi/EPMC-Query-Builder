@@ -42,6 +42,8 @@
   min-width: 165px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
 }
 .inner-container {
   display: flex;

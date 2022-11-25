@@ -63,20 +63,24 @@ const App = () => {
   }
   return (
     <>
-      <h1 className="section-title">
-        Advanced search query builder
-      </h1>
-      <SearchQuery onSearchResults={onSearchResults} />
-      <SearchResults
-        loading={loading}
-        results={results}
-        hitCount={hitCount}
-        onNextPage={onNextPage}
-        onPrevPage={onPrevPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      >
-      </SearchResults>
+      <header role="banner">
+        <h1 className="section-title">
+          Advanced search query builder
+        </h1>
+      </header>
+      <main role="main">
+        <SearchQuery onSearchResults={onSearchResults} />
+        <SearchResults
+          loading={loading}
+          results={results}
+          hitCount={hitCount}
+          onNextPage={onNextPage}
+          onPrevPage={onPrevPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        >
+        </SearchResults>
+      </main>
     </>
   );
 }

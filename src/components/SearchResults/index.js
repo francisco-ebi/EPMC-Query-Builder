@@ -9,10 +9,18 @@ const SearchResults = ({ results, loading, ...restProps}) => {
   const overlayClassName = loading ? "overlay active" : "overlay";
   return (
     <div className="container">
-      <div className={overlayClassName}>
+      <div className={overlayClassName} aria-hidden="true">
         <p>Loading...</p>
       </div>
       <h1 className="section-title">Search results</h1>
+      <div
+        className="sr-only"
+        id="announce"
+        role="region"
+        aria-live="polite"
+        >
+          {results.length > 0 ? 'Search results are available': null}
+      </div>
       {results.length === 0 ? (
         <span>Enter a search term to view results</span>
       ) : (
