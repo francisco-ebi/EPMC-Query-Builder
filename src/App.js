@@ -12,13 +12,16 @@ const App = () => {
   const [hitCount, setHitCount] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [nextCursorMark, setNextCursorMark] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchResults = (params) => {
     if (resultsPerPage[currentPage]) {
       setResults(resultsPerPage[currentPage])
     } else {
+      setLoading(true);
       fetchSearchResults(params)
       .then(data => {
+        setLoading(false);
         setNextCursorMark(data.nextCursorMark);
         setHitCount(data.hitCount);
         setResults(data.results);
@@ -39,6 +42,7 @@ const App = () => {
   // dont run effect when receiving initial value
   // will be handled in onSearchResults function
   usesDidMountEffect(() => {
+    console.log('CURR PAGE TO: ', currentPage);
     fetchResults({query, cursorMark: nextCursorMark});
   }, [currentPage]);
 
@@ -47,9 +51,13 @@ const App = () => {
     setQuery(query);
     fetchResults({query})
   }
-  const onNextPage = () => setCurrentPage(currentPage + 1);
+  const onNextPage = () => {
+    if (!loading) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
   const onPrevPage = () => {
-    if (currentPage > 0) {
+    if (currentPage > 0 && !loading) {
       setCurrentPage(currentPage - 1);
     }
   }
@@ -60,6 +68,7 @@ const App = () => {
       </h1>
       <SearchQuery onSearchResults={onSearchResults} />
       <SearchResults
+        loading={loading}
         results={results}
         hitCount={hitCount}
         onNextPage={onNextPage}

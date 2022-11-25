@@ -5,9 +5,13 @@ import ExtraInfo from './ExtraInfo';
 import Paginator from './Paginator';
 import "./SearchResults.css";
 
-const SearchResults = ({ results, ...restProps}) => {
+const SearchResults = ({ results, loading, ...restProps}) => {
+  const overlayClassName = loading ? "overlay active" : "overlay";
   return (
     <div className="container">
+      <div className={overlayClassName}>
+        <p>Loading...</p>
+      </div>
       <h1 className="section-title">Search results</h1>
       {results.length === 0 ? (
         <span>Enter a search term to view results</span>

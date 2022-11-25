@@ -29,6 +29,7 @@ html {
 }
 .container {
   padding: 0 2em;
+  position: relative;
 }
 .separator {
   margin: 2em 0 1em;
