@@ -27,6 +27,11 @@ html {
   background-color: #a9abad;
   cursor: not-allowed;
 }
+.button svg {
+  display: inline-block;
+  max-width: 15px;
+  fill: #FFF;
+}
 .container {
   padding: 0 2em;
   position: relative;

@@ -17,7 +17,7 @@
 }
 .controls {
   display: flex;
-  gap: 5%;
+  gap: 2%;
 }
 .controls input, .controls textarea {
   flex-grow: 1;
@@ -37,6 +37,11 @@
   padding-left: 16px;
   font-weight: bold;
   border-radius: 0;
+}
+.controls .search {
+  min-width: 165px;
+  display: flex;
+  align-items: center;
 }
 .inner-container {
   display: flex;
