@@ -42,7 +42,6 @@ const App = () => {
   // dont run effect when receiving initial value
   // will be handled in onSearchResults function
   usesDidMountEffect(() => {
-    console.log('CURR PAGE TO: ', currentPage);
     fetchResults({query, cursorMark: nextCursorMark});
   }, [currentPage]);
 
