@@ -4,15 +4,15 @@ import "./SearchQuery.css";
 const SearchQuery = ({ onSearchResults }) => {
   const [term, setTerm] = useState("");
   const [operator, setOperator] = useState("OR");
-  const [query, setQuery] = useState([]);
+  const [query, setQuery] = useState("");
 
   const addTerm = event => {
     event.preventDefault();
-    const tempQuery = [...query];
+    let tempQuery = '';
     if (query.length === 0) {
-      tempQuery.push(term);
+      tempQuery = term;
     } else {
-      tempQuery.push(operator, term);
+      tempQuery = query.trim().concat(" ", operator, " ", term);
     }
     setQuery(tempQuery);
     setTerm("");
@@ -61,10 +61,13 @@ const SearchQuery = ({ onSearchResults }) => {
         <hr className="separator"/>
         <h2>Search query</h2>
         <div className="controls">
-          <textarea readOnly value={query.join(' ')} />
+          <textarea
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
           <button
             className="button search"
-            onClick={() => onSearchResults(query.join(' '))}
+            onClick={() => onSearchResults(query)}
             disabled={query.length === 0}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
