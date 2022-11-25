@@ -2,9 +2,10 @@ import TitleInfo from './TitleInfo';
 import AuthorInfo from './AuthorInfo';
 import JournalInfo from './JournalInfo';
 import ExtraInfo from './ExtraInfo';
+import Paginator from './Paginator';
 import "./SearchResults.css";
 
-const SearchResults = ({ results, hitCount }) => {
+const SearchResults = ({ results, ...restProps}) => {
   return (
     <div className="container">
       <h1 className="section-title">Search results</h1>
@@ -13,7 +14,7 @@ const SearchResults = ({ results, hitCount }) => {
       ) : (
         <>
           <div className="results-wrapper">
-            <span>1-25 of <b>{hitCount.toLocaleString()}</b> results</span>
+            <Paginator { ...restProps }/>
             <div className="blue-bar-separator"></div>
             {results.map(publication => (
               <div className="result" key={publication.id}>
