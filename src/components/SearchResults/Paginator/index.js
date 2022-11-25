@@ -34,7 +34,7 @@ export default function Paginator({
         { pages.map(page => (
           <button
             type="button"
-            className={page === currentPage ? 'selected': ''}
+            className={page === currentPage + 1 ? 'selected': ''}
             onClick={() => setCurrentPage(page)}
             >
               {page}
