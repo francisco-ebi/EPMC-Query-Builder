@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should output bookOrReport details if does not have journal info 1`] = `
+<p
+  className="publisher-info"
+>
+  bioRxiv
+  ,
+  2022
+</p>
+`;
+
+exports[`should output journal info if publication has data 1`] = `
+<p
+  className="journal-info"
+>
+  J Feline Med Surg
+  , 24
+  (9)
+  :847-852
+  , 
+  01 Sept 2022
+</p>
+`;

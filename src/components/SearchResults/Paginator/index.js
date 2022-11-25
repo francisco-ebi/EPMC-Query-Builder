@@ -19,9 +19,9 @@ export default function Paginator({
   pages = pages.filter(page => page > 0);
   return (
     <div className="paginator">
-      <span className="hit-count">
+      <span className="hit-count" data-testid="hitCount">
         {getFirstResultNum(currentPage)}-{(currentPage + 1) * 25} of&nbsp;
-        <b>{hitCount.toLocaleString()}</b> results
+        <span>{hitCount.toLocaleString()}</span> results
       </span>
       <div className="paginator">
         <button
@@ -29,6 +29,7 @@ export default function Paginator({
           className="prev"
           aria-label="navigate to previous page"
           onClick={onPrevPage}
+          data-testid="prevPageBtn"
           >
             Prev
         </button>
@@ -39,6 +40,7 @@ export default function Paginator({
             aria-label={`navigate to page number ${page}`}
             className={page === currentPage + 1 ? 'selected': ''}
             onClick={() => setCurrentPage(page - 1)}
+            data-testid={`btnPage${page}`}
             >
               {page}
           </button>
@@ -47,7 +49,8 @@ export default function Paginator({
           type="button"
           className="next"
           aria-label="navigate to next page"
-          onClick={onNextPage}
+          onClick={(onNextPage)}
+          data-testid="nextPageBtn"
         >
           Next
         </button>

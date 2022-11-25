@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it creates 1`] = `
+<p
+  className="extra-info"
+>
+  Cited by: 
+  11
+   articles | PMID: 
+  id
+   | PMCID: 
+  pmcid
+</p>
+`;
