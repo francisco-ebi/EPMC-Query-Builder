@@ -15,7 +15,7 @@ export default function Paginator({
   setCurrentPage,
 }) {
   // only show 3 pages at most
-  let pages = [currentPage - 1, currentPage, currentPage + 1];
+  let pages = [currentPage, currentPage + 1, currentPage + 2];
   pages = pages.filter(page => page > 0);
   return (
     <div className="paginator">
@@ -35,7 +35,7 @@ export default function Paginator({
           <button
             type="button"
             className={page === currentPage + 1 ? 'selected': ''}
-            onClick={() => setCurrentPage(page)}
+            onClick={() => setCurrentPage(page - 1)}
             >
               {page}
           </button>
