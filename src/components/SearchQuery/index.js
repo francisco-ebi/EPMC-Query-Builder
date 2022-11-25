@@ -71,6 +71,7 @@ const SearchQuery = ({ onSearchResults }) => {
           />
           <button
             className="button search"
+            aria-label="search results"
             onClick={() => onSearchResults(query)}
             disabled={query.length === 0}
           >
