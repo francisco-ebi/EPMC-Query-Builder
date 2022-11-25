@@ -1,6 +1,17 @@
 .paginator {
   display: flex;
 }
+.paginator button {
+  background-color: #FFF;
+  border: 0;
+  color: #175f8f;
+  font-weight: bold;
+  cursor: pointer;
+}
+.paginator .selected {
+  background-color: #abd1e9;
+  color: #000;
+}
 .hit-count {
   margin-right: auto;
 }

@@ -11,8 +11,12 @@ export default function Paginator({
   currentPage,
   hitCount,
   onPrevPage,
-  onNextPage
+  onNextPage,
+  setCurrentPage,
 }) {
+  // only show 3 pages at most
+  let pages = [currentPage - 1, currentPage, currentPage + 1];
+  pages = pages.filter(page => page > 0);
   return (
     <div className="paginator">
       <span className="hit-count">
@@ -21,13 +25,24 @@ export default function Paginator({
       </span>
       <div className="paginator">
         <button
-            type="button"
-            onClick={onPrevPage}
+          type="button"
+          className="prev"
+          onClick={onPrevPage}
           >
             Prev
         </button>
+        { pages.map(page => (
+          <button
+            type="button"
+            className={page === currentPage ? 'selected': ''}
+            onClick={() => setCurrentPage(page)}
+            >
+              {page}
+          </button>
+        )) }
         <button
           type="button"
+          className="next"
           onClick={onNextPage}
         >
           Next

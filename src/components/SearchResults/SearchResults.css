@@ -2,10 +2,11 @@
   margin-top: 1em;
 }
 .blue-bar-separator {
-  background-color: #cee4ee;
+  background-color: #dae9f3;
   min-height: 6px;
   width: 100%;
   margin-bottom: 1em;
+  margin-top: 6px;
 }
 
 .result .title {

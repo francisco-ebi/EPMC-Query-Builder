@@ -65,6 +65,7 @@ const App = () => {
         onNextPage={onNextPage}
         onPrevPage={onPrevPage}
         currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       >
       </SearchResults>
     </>
