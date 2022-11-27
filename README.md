@@ -1,6 +1,8 @@
 #  EPMC Query Builder
+## Prerequisites
+- Node.js version 18.0.0 or later
+- Yarn
 ## Running the project
-Prerequisites: Node and Yarn
 1. After cloning the repository, move to the newly created directory and run `yarn install`
 2. To start the proyect, use `yarn start` and open http://localhost:1234 in a browser
 3. To run unit test, use `yarn test`
