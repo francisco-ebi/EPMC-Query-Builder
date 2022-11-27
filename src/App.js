@@ -42,7 +42,9 @@ const App = () => {
   // dont run effect when receiving initial value
   // will be handled in onSearchResults function
   usesDidMountEffect(() => {
-    fetchResults({query, cursorMark: nextCursorMark});
+    if (query) {
+      fetchResults({query, cursorMark: nextCursorMark});
+    }
   }, [currentPage]);
 
   const onSearchResults = (query) => {
