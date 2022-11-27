@@ -21,7 +21,7 @@ export default function Paginator({
     <div className="paginator">
       <span className="hit-count" data-testid="hitCount">
         {getFirstResultNum(currentPage)}-{(currentPage + 1) * 25} of&nbsp;
-        <span>{hitCount.toLocaleString()}</span> results
+        <b>{hitCount.toLocaleString()}</b> results
       </span>
       <div className="paginator">
         <button

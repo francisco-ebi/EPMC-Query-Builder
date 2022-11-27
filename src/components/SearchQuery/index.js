@@ -22,6 +22,7 @@ const SearchQuery = ({ onSearchResults }) => {
     <>
       <div className="blue-bar">
         <h2>Add keyword or phrase</h2>
+        <span className="chevron">▾</span>
       </div>
       <div className="container">
         <form className="term-form" onSubmit={addTerm}>
@@ -63,7 +64,7 @@ const SearchQuery = ({ onSearchResults }) => {
         </form>
         <hr className="separator"/>
         <h2>Search query</h2>
-        <div className="controls">
+        <div className="controls search-query">
           <textarea
             aria-label="search query"
             value={query}

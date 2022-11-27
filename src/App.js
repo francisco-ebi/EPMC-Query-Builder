@@ -64,12 +64,12 @@ const App = () => {
   }
   return (
     <>
-      <header role="banner">
+      <header className="container" role="banner">
         <h1 className="section-title">
           Advanced search query builder
         </h1>
       </header>
-      <main role="main">
+      <main className="main-content" role="main">
         <SearchQuery onSearchResults={onSearchResults} />
         <SearchResults
           loading={loading}
