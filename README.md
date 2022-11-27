@@ -1,4 +1,4 @@
-#  Readme
+#  EPMC Query Builder
 ## Running the project
 Prerequisites: Node and Yarn
 1. After cloning the repository, move to the newly created directory and run `yarn install`
